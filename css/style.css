@@ -1,0 +1,34 @@
+body {
+  background: hsla(225, 10%, 10%, 0.1);
+
+}
+
+.wrapper {
+  width: 960px;
+  height: 1200px;
+  margin: auto;
+  background: hsla(225, 50%, 50%, 0.2);
+  border: 1px solid transparent;
+}
+
+h1 {
+  text-align: center;
+}
+
+#next { display: none;}
+.image { margin-left: 15%;}
+.center { text-align: center;}
+.comment { color: #eee; }
+.white  { color: #fff; }
+.firebrick { color: firebrick; }
+.cornflowerblue { color: cornflowerblue; }
+
+
+.code-style {
+  padding: 5px;
+  background: hsla(200, 10%, 10%, 0.8);
+  color: #F57900;
+  font-family: monospace;
+  line-height: 1.5;
+  font-size: 1rem;
+}

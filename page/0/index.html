@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="../../lib/codemirror.js"></script>
+  <link rel="stylesheet" href="../../lib/codemirror.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../mode/javascript/javascript.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="code-style">
+    <p class="comment">/* здесь ошибка в порядке объявления, переместите строки в
+      редактор в нужном порядке и затем нажмите "Ок" */</p>
+  <pre>
+ var a = 1 + b;
+ var b = 2;
+ var res = a + b;
+ </pre>
+    </div>
+
+   <div id="code">
+
+   </div>
+   <p><label><input type="submit" value="Ok" id="ok"></label></p>
+   <p id="next"><a href="../1/index.html"><button><img src="../../img/play.svg" width="16" alt=""></button></a></p>
+  </div>
+  <script>
+     var editor = CodeMirror(document.getElementById("code"), {
+       lineNumbers: true,
+       matchBrackets: true
+     });
+     var text;
+
+     function confirm (txt) {
+       eval(txt);
+       if(res == 5) {
+         console.log('ok ', res);
+       }
+     }
+
+     var elemOk = document.getElementById('ok');
+     elemOk.addEventListener('click', function () {
+       text = editor.getValue();
+       confirm(text);
+       var next = document.getElementById('next');
+       next.style.display = 'block';
+     })
+
+  </script>
+</body>
+</html>
