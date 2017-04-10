@@ -12,24 +12,52 @@
   <div class="wrapper">
     <pre class="code-style">
 <span class="comment">/*
-  Конкатенация и приведение к числу.
-  Необходимо сделать поправку в строке так,
-  чтобы стока была в как в комментарии справа.
-  Рекомендуется предварительно проверить отображение
-  (это удобно делать в FireFox вызвава редактор по  Shift+F4)
+  <em>Инкремент (++i)</em>, <em>декремент(--i)</em> -
+  эти сложные слова описывают всего лишь операцию
+  <em>увеличения</em> и <em>уменьшения</em> значения переменной на единицу.
+  А <em>постфиксная(i++)</em> и <em>префиксная(--i)</em> форма описывают момент
+  когда именно это изменение произойдет:
+  <strong>после</strong> (i++) или <strong>до</strong> (++i) текущей операции.
+  // var i = 0, j = 0; ++i + 2 === 3;  j++ + 2 === 2;
+  // var l = 0, m = 0; --l + 2 === 1;  m-- + 2 === 2;
+  Скопируйте код в редактор,
+  впишите в строку <strong>youAnswer</strong> ваше мнение о том,
+  какие там должны быть цифры, нажмите "Ok".
   */</span>
- var a = "hel "+ "lo"; <span class="comment">//hello</span>
- var b = "hello" + "world"; <span class="comment">//hello world</span>
- var c = 19 + 61; <span class="comment">// 1961</span>
- var d = +"19" + +"61"; <span class="comment">// 1961</span>
- var e = "19" + +"61"; <span class="comment">// 80</span>
- var f = "aprel/" + 19 + 61; <span class="comment">// aprel/80</span>
+
+  var a , b, c, d, e , f;
+  var res = "000000";
+
+  a = res.length;
+  b = --a;
+  c = b;
+  d = a--;
+  e = c - --a;
+  f = a;
+  res = "" + a + b + c + d + e + f;
+
+  var youAnswer = "012345";
+  var resault = "";
+
+  for (var i = 0; i &lt; res.length; i++) {
+    if (res[i] === youAnswer[i]) {
+      resault += 1;
+    }
+    else {
+      resault += 0;
+    }
+  }
     </pre>
    <div id="code">
 
+
    </div>
-   <p><label><input type="submit" value="Ok" id="ok"></label></p>
-   <p id="next"><a href="../2/index.html"><button><img src="../../img/play.svg" width="16" alt=""></button></a></p>
+   <p class="btn">
+     <input type="submit" value="Ok" id="ok">
+     <a href="../2/index.html" class="next-page" id="next">
+       <img src="../../img/next.png" alt="next page">
+     </a>
+    </p>
   </div>
   <script>
      var editor = CodeMirror(document.getElementById("code"), {
@@ -40,30 +68,18 @@
 
      function confirm (txt) {
        eval(txt);
-       var res = "";
-       res += a == "hello" ? 1 : 0;
-       res += b == "hello world" ? 1 : 0;
-       res += c == 1961 ? 1 : 0;
-       res += d == 1961 ? 1 : 0;
-       res += e == 80 ? 1 : 0;
-       res += f == "aprel/80" ? 1 : 0;
-      console.log("a = ", a);
-      console.log("b = ", b);
-      console.log("c = ", c);
-      console.log("d = ", d);
-      console.log("e = ", e);
-      console.log("f = ", f);
-      if (res != "111111") {
-        var err = "Ошибка в строках ";
+
+      if (resault != "111111") {
+        var err = "Ошибка в строке на позиции ";
         for (var i = 0; i < res.length; i++) {
-          if (res[i] == 0) {
-            err += (i + 1) + ", ";
+          if (resault[i] == 0) {
+            err += i  + ", ";
           }
         }
         alert(err);
       }else {
         var next = document.getElementById('next');
-        next.style.display = 'block';
+        next.style.display = 'inline-block';
       }
     }
 

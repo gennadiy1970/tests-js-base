@@ -32,8 +32,12 @@
    <div id="code">
 
    </div>
-   <p><label><input type="submit" value="Ok" id="ok"></label></p>
-   <p id="next"><a href="page/0/index.html"><button><img src="img/play.svg" width="16" alt=""></button></a></p>
+   <p class="btn">
+     <input type="submit" value="Ok" id="ok">
+     <a href="page/0/index.html" class="next-page" id="next">
+       <img src="img/next.png" alt="next page">
+     </a>
+    </p>
   </div>
   <script>
      var editor = CodeMirror(document.getElementById("code"), {
@@ -47,7 +51,7 @@
         try {
           if (hello == "Hello") {
             var next = document.getElementById('next');
-            next.style.display = 'block';
+            next.style.display = 'inline-block';
           }
         } catch (e) {
             alert('Ошибка' + e.name + ":" + e.message + "\n" + e.stack);

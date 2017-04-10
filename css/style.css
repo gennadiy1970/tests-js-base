@@ -1,6 +1,7 @@
 body {
   background: hsla(225, 10%, 10%, 0.1);
-
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -25,10 +26,38 @@ h1 {
 
 
 .code-style {
-  padding: 5px;
+  padding: 0 5px;
+  margin: 0 auto;
+  border: 1px solid transparent;
   background: hsla(200, 10%, 10%, 0.8);
   color: #F57900;
   font-family: monospace;
   line-height: 1.5;
   font-size: 1rem;
+}
+
+.btn {  height: 50px; }
+
+input[type="submit"] {
+  padding: 0;
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: orange;
+  margin-left: 36%;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.next-page {
+  display: inline-block;
+  height: 50px;
+  /*width: 50px;*/
+  margin-left: 15px;
+  vertical-align: top;
+}
+
+.next-page > img {
+  height: 50px;
 }
